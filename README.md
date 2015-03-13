@@ -57,12 +57,20 @@ emailtext = Received from $sender at $datetime: $message
 * Variables that you can use in "emailsubject" and "emailtext" include: $sender, $datetime and $message. 
 You may change it how you wish.
 
-4 - Reload apache
+4 - Enter the application path to the script.
+
+>	vim smsgateway.wsgi
+
+After the ```def application(environ, start_response):``` line, change the variable appath to the script's path
+```
+	apppath = "/var/www/path-to-your-application/"
+```
+5 - Reload apache
 ```
 sudo a2ensite smssubdomain-yourdomain-com
 sudo service apache2 reload
 ```
-5 -  Set up your NetGSM account so as to forward incoming SMS to your web server
+6 -  Set up your NetGSM account so as to forward incoming SMS to your web server
  In the API settings pane, click Forward incoming SMS (Gelen SMS'i Yonlendir), enter your URL and then click Save.
 
 
