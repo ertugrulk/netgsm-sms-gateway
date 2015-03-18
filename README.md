@@ -23,7 +23,7 @@ And copy the following into the file and then make the changes such as /var/www/
   ErrorLog ${APACHE_LOG_DIR}/error.log
 	CustomLog ${APACHE_LOG_DIR}/access.log combined
   WSGIScriptAlias / /var/www/path-to-your-application/smsgateway.wsgi
-  <Directory /var/www/sms.ertugrulk.me/>
+  <Directory /var/www/path-to-your-application/>
     Order deny,allow
     Allow from all
   </Directory>
